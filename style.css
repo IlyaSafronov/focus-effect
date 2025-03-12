@@ -1,0 +1,22 @@
+li > a {
+  color: rgb(13, 66, 66);
+}
+
+.fancy-hover {
+  padding: 2rem;
+  line-height: 1.5;
+  font-size: 18px;
+  color: rgb(228, 15, 15);
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    & > li {
+      transition: 
+      transform .3s linear,
+      opacity 0.3s linear;
+    }
+    &:has(> li:hover) > li:not(:hover), 
+    &:has(> li:focus-within) > li:not(:focus-within) {
+      opacity: 0.25;
+      transform: scale(0.8);
+    }
+  }
+}
